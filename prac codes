@@ -1,0 +1,140 @@
+2+5
+
+
+function f(x,y)
+    x+y
+end
+
+f(2,3)
+
+
+function g(x,y)
+           return x - y
+           x *y
+       end
+g(2,3)
+f(2,3)
+
+function t(x,y)
+               r = y/x
+               return x*sqrt(1+r*r)
+           end
+
+t(2,3)
+
+function t(x,y)
+               return sqrt(x*x+y*y)
+           end
+t(3,4)
+
+*(2,3,3)
+
+(x -> x^2 + 2x - 1)(4)
+((x,y,z)->2x+y-z)(1,2,3)
+(x-> x+2)
+
+map(x -> x^2 + 2x - 1, [1,3,-1])
+
+function foo(a,b)
+     a+b, a*b
+end
+
+foo(2,5)
+
+foo(2,3)
+
+import Base.range
+ minmax(x, y) = (y < x) ? (y, x) : (x, y)
+minmax(10, 2)
+function ran(x,y)
+    return y-x
+end
+
+ran(minmax(10, 2))
+ran(2,3)
+
+bar(a,b,x...) = (a,b,x)
+bar(2,3)
+
+function test(x, y)
+           if x < y
+               println("x is less than y")
+           elseif x > y
+               println("x is greater than y")
+           else
+               println("x is equal to y")
+           end
+       end
+test(2,3)
+test(3,0)
+
+function test(x, y)
+           if x < y
+               z=x+y
+           elseif x > y
+               z=x-y
+           else
+               println("x is equal to y")
+           end
+       end
+       test(2,3)
+       test(3,2)
+       test(1,1)
+
+x=-3
+       if x > 0
+           "positive!"
+       else
+           "negative..."
+       end
+
+x=1; y=2
+println(x>y ? "less than": "do not know")
+
+test(x, y) = println(x < y ? "x is less than y"    :
+                            x > y ? "x is greater than y" : "x is equal to y")
+
+test(2,2)
+
+v(x) = (println(x); x)
+1 < 2 ? v("yes") : v("no")
+
+
+
+using Metalhead
+using Metalhead: classify
+
+using Images
+
+download("https://images.axios.com/078ps5QcbNgqsgEI_QkV9hDW9PQ=/0x0:3900x2194/1920x1080/2018/08/25/1535212462538.jpg", "Trump.jpg")
+
+
+image=load("Trump.jpg")
+
+vgg = VGG19()
+
+image
+
+classify(vgg, image)
+
+image2=load("abc.jpg")
+classify(vgg, image2)
+
+image2=load("elephant.jpg")
+classify(vgg, image2)
+
+
+image3=load("Tiff.jpg")
+classify(vgg, image3)
+
+
+Pkg.add("AbstractAlgebra")
+using AbstractAlgebra
+R, (x, y, z) = PolynomialRing(ZZ, ["x", "y", "z"])
+R
+R+1
+f = x + y + z + 1
+
+p = f^20;
+p
+@time q = p*(p+1);
